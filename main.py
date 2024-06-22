@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import logging
 from aiogram import Bot, Dispatcher, executor, types
 from default_button import menu_button, sell_avto
-# from inline_button import keyboard
+from inline_button import keyboard
 load_dotenv()
 
 API_TOKEN = os.getenv("ssh_key")
@@ -21,6 +21,22 @@ async def first_massage(message: types.Message):
 @dp.message_handler(lambda message: message.text == "Avtomobil sotish")
 async def menu_massage(message: types.Message):
     await message.reply(f"Avtomobil turini tanglang", reply_markup=sell_avto)
+
+@dp.message_handler(lambda message: message.text == "Yengil mashina")
+async def menu_massage(message: types.Message):
+    await message.reply(f"Avtomobil turini tanglang", reply_markup=keyboard)
+
+@dp.message_handler(lambda message: message.text == "Yuk mashina")
+async def menu_massage(message: types.Message):
+    await message.reply(f"Avtomobil turini tanglang", reply_markup=keyboard)
+
+@dp.message_handler(lambda message: message.text == "Mototrsikl")
+async def menu_massage(message: types.Message):
+    await message.reply(f"Avtomobil turini tanglang", reply_markup=keyboard)
+
+@dp.message_handler(lambda message: message.text == "Qayiqlar")
+async def menu_massage(message: types.Message):
+    await message.reply(f"Avtomobil turini tanglang", reply_markup=keyboard)
 
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=True)
