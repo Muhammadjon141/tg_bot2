@@ -6,7 +6,7 @@ from default_button import menu_button, sell_avto
 from inline_button import keyboard
 load_dotenv()
 
-API_TOKEN = os.getenv("ssh_key")
+API_TOKEN = os.getenv("API_TOKEN")
 
 logging.basicConfig(level=logging.INFO)
 
